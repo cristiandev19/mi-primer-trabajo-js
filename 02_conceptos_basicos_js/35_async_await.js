@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 // con la palabra async se vuelve una funcion asincrona
 // let getName = async() => {
 
@@ -24,7 +26,7 @@ let saludo = async() => {
 
     let nombre = await getNombre();
 
-    return `Hola ${ nombre }`
+    return `Hola ${ nombre }`;
 }
 
 // y como volvimos una funcion promesa podemos manejarla como tal

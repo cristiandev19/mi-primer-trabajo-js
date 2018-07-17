@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // que son los callbacks ? 
 // por ahora digamos que son acciones que esperan ser realizadas 
 
