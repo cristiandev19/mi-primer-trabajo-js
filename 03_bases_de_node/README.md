@@ -4,7 +4,7 @@
 
 
 ## Documentacion de la version que estamos usando de node
-- (Documentacion Nodejs)[https://nodejs.org/dist/latest-v10.x/docs/api/)
+- [Documentacion Nodejs](https://nodejs.org/dist/latest-v10.x/docs/api/)
 
 
 ## Objetivos
