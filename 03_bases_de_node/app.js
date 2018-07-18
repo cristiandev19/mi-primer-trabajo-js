@@ -1,5 +1,18 @@
+const argv = require('yargs')
+    .command('listar', 'Imprime en consola la tabla de multiplicar', {
+        base: {
+            demand: true,
+            alias: 'b',
+        },
+        limite: {
+            alias: 'l',
+            default: 10,
+        }
+    })
+    .help()
+    .argv;
 // required
-const fs = require('fs');
+// const fs = require('fs');
 /*
 hay 3 tipos de require:
 - cuando importamos un paquete que ya existe por nativamente en node
@@ -7,17 +20,74 @@ hay 3 tipos de require:
 - cuando importamos un paquete que nosotros hemos creado
 */
 
-let base = 3;
-let data = '';
+// el .js en el require es opcional 
+// const crearArchivo = require('./multiplicar/multiplicar.js');
+// const crearArchivo = require('./multiplicar/multiplicar');
 
-for (let i = 0; i <= 10; i++) {
-    data += `${base} * ${i} = ${ base*i }\n`;
-}
+// destructuracion
+const { crearArchivo } = require('./multiplicar/multiplicar');
 
-fs.writeFile(`tablas/tabla-${ base }.txt`, data, (err) => {
-    if (err) throw err;
-    console.log('The file app-example1.txt has been saved!');
-});
 
-crearArchivo(base)
-    .then(archivo => console.log(`archivoo creado: ${ archivo }`));
+
+// let base = 'hola';
+
+/* si usas  
+console.log(module);
+-> modulo es un objeto global que se puede usar en toda la aplicacion
+
+imprime lo siguiente:
+Module {
+    id: '.',
+    exports: {},
+    parent: null,
+    filename:
+     '/home/cris19/Studying/Javascript/node_de_cero_experto/03_bases_de_node/app.js',
+    loaded: false,
+    children: [],
+    paths:
+     [ '/home/cris19/Studying/Javascript/node_de_cero_experto/03_bases_de_node/node_modules',
+       '/home/cris19/Studying/Javascript/node_de_cero_experto/node_modules',
+       '/home/cris19/Studying/Javascript/node_modules',
+       '/home/cris19/Studying/node_modules',
+       '/home/cris19/node_modules',
+       '/home/node_modules',
+       '/node_modules' ] }
+  
+*/
+
+/*
+existe un objetp llamado process, podemos testear estas lineas
+console.log(process);
+console.log(process.argv); // esto devuelve dos cosas 
+// la ubicacion de node y del archivo que usamos
+
+// pero que nos permite ver .argv ??
+
+pues los argumentos que le pasemos desde linea de comandos
+por ejempla
+
+node <nombre-del-archivo js> --numero=4 a b c d
+// estos argumentos pasaran a ser parte del objeto 
+// creado por argv
+
+*/
+
+// entonces una forma de recibir la base desde linea de comandos
+// let argv2 = process.argv;
+// console.log(argv2);
+
+
+// para visualizar que hace yargs
+console.log(argv);
+
+
+// let parametro = argv[2];
+// let base = parametro.split('=')[1];
+
+// cual es el problema ? las validaciones,  porque? saltarian 
+// demasiados posibles errores y esto seria complicado de mantener 
+
+// crearArchivo(base)
+//     .then(archivo => console.log(`archivo creado: ${ archivo }`))
+//     .catch(e => console.log(e));
+//

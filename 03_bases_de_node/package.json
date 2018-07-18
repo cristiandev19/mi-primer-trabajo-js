@@ -1,0 +1,17 @@
+{
+  "name": "03_bases_de_node",
+  "version": "0.1.0",
+  "description": "cosas basicas de node que necesitas saber",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pystudent1913",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^12.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
