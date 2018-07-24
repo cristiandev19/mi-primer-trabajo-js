@@ -1,16 +1,28 @@
-const argv = require('yargs')
-    .command('listar', 'Imprime en consola la tabla de multiplicar', {
-        base: {
-            demand: true,
-            alias: 'b',
-        },
-        limite: {
-            alias: 'l',
-            default: 10,
-        }
-    })
-    .help()
-    .argv;
+const argv = require('./config/yargs').argv;
+
+// const argv = require('yargs')
+//     .command('listar', 'Imprime en consola la tabla de multiplicar', {
+//         base: {
+//             demand: true,
+//             alias: 'b',
+//         },
+//         limite: {
+//             alias: 'l',
+//             default: 10,
+//         }
+//     })
+//     .command('crear', 'crea la tabla de multiplicar', {
+//         base: {
+//             demand: true,
+//             alias: 'b',
+//         },
+//         limite: {
+//             alias: 'l',
+//             default: 10,
+//         }
+//     })
+//     .help()
+//     .argv;
 // required
 // const fs = require('fs');
 /*
@@ -26,7 +38,7 @@ hay 3 tipos de require:
 
 // destructuracion
 const { crearArchivo } = require('./multiplicar/multiplicar');
-
+const { listarTabla } = require('./multiplicar/multiplicar');
 
 
 // let base = 'hola';
@@ -78,11 +90,38 @@ node <nombre-del-archivo js> --numero=4 a b c d
 
 
 // para visualizar que hace yargs
-console.log(argv);
+//console.log(argv);
 
 
 // let parametro = argv[2];
 // let base = parametro.split('=')[1];
+
+// para seleccionar parametros
+let comando = argv._[0];
+// console.log(argv);
+
+switch (comando) {
+    case 'listar':
+        console.log('listar');
+        listarTabla(argv.base, argv.limite)
+            .then(resp => console.log(resp));
+        break;
+    case 'crear':
+        // console.log('crear...');
+        crearArchivo(argv.base, argv.limite)
+            .then(archivo => console.log(`archivo creado: ${ archivo }`))
+            .catch(e => console.log(e));
+        break;
+    default:
+        console.log('bandera invalida');
+        break;
+}
+
+
+
+
+
+
 
 // cual es el problema ? las validaciones,  porque? saltarian 
 // demasiados posibles errores y esto seria complicado de mantener 
@@ -90,4 +129,3 @@ console.log(argv);
 // crearArchivo(base)
 //     .then(archivo => console.log(`archivo creado: ${ archivo }`))
 //     .catch(e => console.log(e));
-//
