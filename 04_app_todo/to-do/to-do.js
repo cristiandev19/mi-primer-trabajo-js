@@ -16,12 +16,9 @@ const load_db = () => {
     // console.log(data);
 }
 
-
-
 const save_db = () => {
     // debemos pasar la lista (list_todo) a un json y js nos permite eso
     let data = JSON.stringify(list_todo);
-
 
     fs.writeFile('db/data.json', data, (err) => {
         if (err) throw new Error('hubo un error', err);
@@ -52,6 +49,7 @@ const update_todo = (desc, completed = true) => {
     load_db();
     let idx = list_todo.findIndex(tarea => tarea.desc === desc)
     if (idx >= 0) {
+        console.log(completed);
         list_todo[idx].completed = completed;
         save_db();
         return true;
@@ -64,12 +62,11 @@ const deleted_todo = (desc) => {
     load_db();
     // let idx = list_todo.findIndex(tarea => tarea.desc === desc);
     // como borrar un elemento con filter
-    let new_list_todo = list_todo.filter(tarea => {
-            return tarea.desc != desc;
-        })
-        // list_todo.slice(idx - 1, idx + 1)
+    // la funcion filter regresa un numero arreglo solo con los valoes que pasen la condicion
+    let new_list_todo = list_todo.filter(tarea => tarea.desc !== desc)
+    // list_todo.slice(idx - 1, idx + 1)
 
-    if (new_list_todo.length == list_todo.length) {
+    if (new_list_todo.length === list_todo.length) {
         return false;
     } else {
         list_todo = new_list_todo;

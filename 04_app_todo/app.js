@@ -25,6 +25,8 @@ para agregar una descripcion al crear una accion:
 
 let comando = argv._[0];
 
+// console.log(argv);
+
 switch (comando) {
     case 'create':
         console.log('creating...');
@@ -47,7 +49,7 @@ switch (comando) {
         break;
     case 'update':
         console.log('actualizando');
-        let updated = script_todo.update_todo(argv.descripcion, argv.completed);
+        let updated = script_todo.update_todo(argv.descripcion, argv.completado);
         console.log(updated);
         break;
 

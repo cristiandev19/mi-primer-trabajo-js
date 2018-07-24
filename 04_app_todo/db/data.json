@@ -1,1 +1,1 @@
-[{"desc":"pasear al perro 1","completed":false},{"desc":"pasear al perro 3","completed":false},{"desc":"pasear al perro 5","completed":false}]
+[{"desc":"pasear al perro 1","completed":"false"},{"desc":"pasear al perro 3","completed":"false"},{"desc":"pasear al perro 5","completed":true},{"desc":"pasear al perro 7","completed":false}]

@@ -1,35 +1,24 @@
-//
-const argv = require('yargs')
-    .command('create', 'Crea una tarea', {
-        descripcion: {
-            demand: true,
-            alias: 'd',
-            desc: 'Descripcion de la tarea por hacer',
-        },
-    })
-    .command('read', 'Lista las tareas', {
 
-    })
-    .command('update', 'Actualiza una tarea', {
-        descripcion: {
-            demand: true,
-            alias: 'd',
-            desc: 'Descripcion de la tarea por modificar',
-        },
-        completado: {
-            demand: true,
-            alias: 'c',
-            default: true,
-            desc: 'Marca como pendiente o completado una tarea',
-        }
-    })
-    .command('delete', 'Elimina una tarea', {
-        descripcion: {
-            demand: true,
-            alias: 'd',
-            desc: 'Descripcion de la tarea por BORRAR',
-        }
-    })
+//
+const descripcion = {
+    demand: true,
+    alias: 'd',
+    desc: 'Descripcion de la tarea por hacer',
+}
+
+const completado = {
+    demand: true,
+    alias: 'c',
+    default: true,
+    desc: 'Marca como pendiente o completado una tarea',
+}
+
+
+const argv = require('yargs')
+    .command('create', 'Crea una tarea', {descripcion})
+    .command('read', 'Lista las tareas', {})
+    .command('update', 'Actualiza una tarea', {descripcion,completado})
+    .command('delete', 'Elimina una tarea', {descripcion})
     .help()
     .argv;
 
