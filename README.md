@@ -1,37 +1,41 @@
-# Introduccion a mi documentacion de NODE.JS (version > 9.x )
+# Mi primer trabajo con js
+
+Este sera mi repositorio para todo lo que incluyan mis videos para trabajar con JS
+
+## Para empezar
+
+Veamos el temario, yo lo dividire en 3 secciones, que sera primero las bases de JS luego alguna libreria o framework que puedes usar. Y por ultimo el superset de JS MUY potente TS como extra, sera muy bueno con Angular y para hacer un backend mas escalable (que son mis especialidades).
 
 
+## Temario 1 para JS
+
+- Tipos de datos
+- Variables y constantes
+- Scopes
+- Operadores
+- Flow control (if, else, for, switch, etc)
+- Functions
+- Array, slices, maps. etc
+- Que es JSON
+- DOM
+- Manejar estados del DOM
+- Destructuring
+- Asincronismo, que es ?
+- Callbacks
+- Promesas
+- Async/await
+- Api de JS
+  - Fetch
+  - Date
+
+## Temario 2 para librerias
+
+Aqui tendras que escoger que tipo de maestro pokemon quieres ser. Tienes estas opcion para elegir
+
+- Angular (tendras que llevar la parte de TS)
+- Vue
+- React
+- Express (tendras que llevar la parte de NODE)
 
 
-## Sitios interesantes y utiles
-
-- [Postman](https://www.getpostman.com/) : ayuda a probar los servicios **REST**
-- 
-
-
-
-
-
-## Extensiones de VisualStudioCode
-
-- HTML CSS Support
-- JS (ES6) code snippets
-- JS-CSS-HTML Formatter
-- Terminal
-- TypeScript Importer
--
-
-## Para actualizar nodejs a la version 10.x
-
-- [askUbuntu](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
-
-
-## Material para estudiar
-
-- [you dont know js (great book)](https://github.com/getify/You-Dont-Know-JS)
-- [dev free-ebooks on github](https://devfreebooks.github.io)
-- [medium +60 js tutorials](https://codeburst.io/60-javascript-tutorials-walkthroughs-cb315cc1947e)
-- [basic web app with express](https://medium.com/@jaouad_45834/basic-chat-web-app-using-express-js-vue-js-socket-io-429588e841f0)
-- [freecodecamps interesting methods in js to be more efective](https://medium.freecodecamp.org/7-javascript-methods-that-will-boost-your-skills-in-less-than-8-minutes-4cc4c3dca03f)
-- []()
 
